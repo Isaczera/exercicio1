@@ -99,5 +99,26 @@ foreign key() references employees(),
 primary key (OfficeCode)
 );
 
+insert into productlines(ProductLine, TextDescription, HtmlDescription, image)
+Values();
 
+insert into products(ProductCode, ProductName, ProductLine, ProductScale, ProductVendor, ProductDescription, QuantilyInStock, BuyPrice, MSRP)
+Values();
 
+insert into orderdetails(OrderNumber, ProductCode, QuantityOrdered, PriceEach, OrderLineNumber)
+Values();
+
+insert into orders(OrderNumber, OrderDate, RequiredDate, ShippedDate, Status, Comments, CustomerNumber)
+Values();
+
+insert into customers(CustomerNumber, CustomerName, ContactLastName, ContactFirstName, Phone, AddressLine1, AddressLine2, City, State, PostalCode, Country, SalesRepEmployeeNumber, CreditLimit)
+Values();
+
+insert into payments(CustomerNumber, CheckNumber, PaymentDate, Amount)
+Values();
+
+insert into employees(EmployeeNumber, LastName, FirstName, Extension, Email, OfficeCode, ReportsTo, JobTitle)
+Values();
+
+insert into offices(OfficeCode, City, Phone, AddressLine1, AddressLine2, State, Country, PostalCode, Territory)
+Values();
