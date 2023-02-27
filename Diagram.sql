@@ -81,11 +81,23 @@ Email varchar(70) not null,
 OfficeCode bigint not null,
 ReportsTo varchar(50) not null,
 JobTitle varchar(50) not null,
-foreign key(EmployeeNumber) references customers (SalesRepEmployeeNumber),
+foreign key(EmployeeNumber) references customers (CustomerNumber),
 primary key (EmployeeNumber)
 );
 
-create table offices
+create table offices(
+OfficeCode bigint not null auto_increment,
+City varchar(50) not null,
+Phone bigint not null,
+AddressLine1 varchar(100) not null,
+AddressLine2 varchar(100) not null,
+State varchar(50) not null, 
+Country varchar(50) not null,
+PostalCode bigint not null,
+Territory varchar(100) not null,
+foreign key() references employees(),
+primary key (OfficeCode)
+);
 
 
 
