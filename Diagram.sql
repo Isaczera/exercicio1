@@ -100,10 +100,10 @@ primary key (OfficeCode)
 );
 
 insert into productlines(ProductLine, TextDescription, HtmlDescription, image)
-Values();
+Values(Danone, Liquido, , https://ibassets.com.br/ib.item.image.big/b-603f4494184e4c70b75ea58e9e2983b9.jpeg);
 
 insert into products(ProductCode, ProductName, ProductLine, ProductScale, ProductVendor, ProductDescription, QuantilyInStock, BuyPrice, MSRP)
-Values();
+Values(001, Iorgute, Danone, );
 
 insert into orderdetails(OrderNumber, ProductCode, QuantityOrdered, PriceEach, OrderLineNumber)
 Values();
