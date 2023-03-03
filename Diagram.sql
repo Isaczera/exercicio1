@@ -33,6 +33,15 @@ foreign key(ProductCode) references products(ProductCode),
 primary key (OrderNumber)
 );
 
+select *from productlines pl
+join products p on p.ProductLine = pl.ProductLine 
+join orderdetails od on od.ProductCode = p.ProductCode
+join orders o on o.OrderNumber = od.OrderNumber
+join customers c on c.CustomerNumber = o.OrderNumber
+join payments pa on pa.CustomerNumber = c.CustomerNumber
+join employees e on e.EmployeeNumber = c.CustomerNumber
+join offices oc on oc.OfficeCode = e.EmployeeNumber;
+
 create table orders(
 OrderNumber bigint not null auto_increment,
 OrderDate datetime not null,
