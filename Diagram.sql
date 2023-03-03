@@ -33,15 +33,6 @@ foreign key(ProductCode) references products(ProductCode),
 primary key (OrderNumber)
 );
 
-select *from productlines pl
-join products p on p.ProductLine = pl.ProductLine 
-join orderdetails od on od.ProductCode = p.ProductCode
-join orders o on o.OrderNumber = od.OrderNumber
-join customers c on c.CustomerNumber = o.OrderNumber
-join payments pa on pa.CustomerNumber = c.CustomerNumber
-join employees e on e.EmployeeNumber = c.CustomerNumber
-join offices oc on oc.OfficeCode = e.EmployeeNumber;
-
 create table orders(
 OrderNumber bigint not null auto_increment,
 OrderDate datetime not null,
@@ -140,3 +131,12 @@ Values(11, "Barbosa", "Daniel", "Afonso", "danielbarbosa@gmail.com", 204, "Danie
 insert into offices(OfficeCode, City, Phone, AddressLine1, AddressLine2, State, Country, PostalCode, Territory)
 Values(11, "Campinas", 199972454, "Rua Mange", "Jardim Alberto", "São Paulo", "Brasil", 12345214, "interior"),
 (12, "Campinas", 199902314, "Rua Roberto", "Jardim Botanico", "São Paulo", "Brasil", 14325789, "interior");
+
+select *from productlines pl
+join products p on p.ProductLine = pl.ProductLine 
+join orderdetails od on od.ProductCode = p.ProductCode
+join orders o on o.OrderNumber = od.OrderNumber
+join customers c on c.CustomerNumber = o.OrderNumber
+join payments pa on pa.CustomerNumber = c.CustomerNumber
+join employees e on e.EmployeeNumber = c.CustomerNumber
+join offices oc on oc.OfficeCode = e.EmployeeNumber;
