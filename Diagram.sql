@@ -95,30 +95,39 @@ State varchar(50) not null,
 Country varchar(50) not null,
 PostalCode bigint not null,
 Territory varchar(100) not null,
-foreign key() references employees(),
+foreign key(OfficeCode) references employees(EmployeeNumber),
 primary key (OfficeCode)
 );
 
 insert into productlines(ProductLine, TextDescription, HtmlDescription, image)
-Values(Danone, Liquido, , https://ibassets.com.br/ib.item.image.big/b-603f4494184e4c70b75ea58e9e2983b9.jpeg);
+Values("01", "Danone", "htmlDanone" , "https://ibassets.com.br"),
+("02", "Tomate", "htmlTomate" , "data:image/jpeg;base64,/9j");
 
-insert into products(ProductCode, ProductName, ProductLine, ProductScale, ProductVendor, ProductDescription, QuantilyInStock, BuyPrice, MSRP)
-Values(001, Iorgute, Danone, );
+insert into products(ProductCode, ProductName, ProductLine, ProductScale, ProductVendor, ProductDescription, QuantityInStock, BuyPrice, MSRP)
+Values(01, "Danone", "01", 100, " Danone S.A.", "liquido", 200, 10, 8),
+(02, "Tomate", "02", 55, "Embrapa", "Fruta", 500, 5, 3);
 
 insert into orderdetails(OrderNumber, ProductCode, QuantityOrdered, PriceEach, OrderLineNumber)
-Values();
+Values(11, 01, 167, 2, 1),
+(12, 02, 475, 7, 2);
 
-insert into orders(OrderNumber, OrderDate, RequiredDate, ShippedDate, Status, Comments, CustomerNumber)
-Values();
+insert into orders(OrderNumber, OrderDate, RequiredDate, ShippedDate, statos, comments, CustomerNumber) 
+values (11, "2022-12-02", "2022-12-03", "2022-12-20", "Enviado", "Atraso no envio", 21),
+(12, "2022-12-25", "2023-01-01", "2023-01-02", "Chegando no destino", "Tudo ok", 22);
+
 
 insert into customers(CustomerNumber, CustomerName, ContactLastName, ContactFirstName, Phone, AddressLine1, AddressLine2, City, State, PostalCode, Country, SalesRepEmployeeNumber, CreditLimit)
-Values();
+Values(11, "Daniel", "Barbosa", "Daniel", 19997190455, "Rua Joao Previtale", "Jardim Alto da Colina", "Valinhos", "São Paulo", 13272315, "Brasil", 101, 10000),
+(12, "Alessandra", "Carneiro", "Alessandra", 19997191466, "Rua Orlando Marrone", "Boa Vista", "Valinhos", "São Paulo", 13272101, "Brasil", 102, 20000);
 
 insert into payments(CustomerNumber, CheckNumber, PaymentDate, Amount)
-Values();
+Values(11, 201, "2023-02-12", 6000),
+(12, 206, "2023-03-06", 20000);
 
 insert into employees(EmployeeNumber, LastName, FirstName, Extension, Email, OfficeCode, ReportsTo, JobTitle)
-Values();
+Values(11, "Barbosa", "Daniel", "Afonso", "danielbarbosa@gmail.com", 204, "Daniel", "Diretor"),
+(12, "Carneiro", "Alessandra", "Silva", "leca02@gmail.com", 340, "Alessandra", "Diretora");
 
 insert into offices(OfficeCode, City, Phone, AddressLine1, AddressLine2, State, Country, PostalCode, Territory)
-Values();
+Values(11, "Campinas", 199972454, "Rua Mange", "Jardim Alberto", "São Paulo", "Brasil", 12345214, "interior"),
+(12, "Campinas", 199902314, "Rua Roberto", "Jardim Botanico", "São Paulo", "Brasil", 14325789, "interior");
