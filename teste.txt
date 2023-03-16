@@ -1,0 +1,7 @@
+select * from aluno a inner join turma t on a.turmaFK = t.id; 
+
+select turma.id, truma.nome, turma.curso, count(*) (aluno.id) from turma inner join
+aluno on turma.id=
+aluno.turmaFK group by turma.id; 
+
+select turmaFK count(*) from aluno group by turmaFK;
