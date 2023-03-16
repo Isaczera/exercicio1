@@ -1,0 +1,65 @@
+create database company;
+use company;
+
+create table employees(
+id bigint not null auto_increment,
+name varchar(150) not null,
+birthDate date not null,
+cpf varchar(11) not null,
+gender enum('F', 'M') not null, 
+hiredDate date not null,
+primary key(id)
+);
+
+create table jobs(
+id bigint not null auto_increment,
+name varchar(200),
+primary key(id)
+);
+
+create table job_employee(
+id bigint not null auto_increment,
+employeeFK bigint not null,
+jobFK bigint not null,
+startDate date not null,
+endDate date,
+primary key(id),
+foreign key(employeeFK) references employees(id),
+foreign key(jobFK) references jobs(id)
+);
+
+create table salary(
+id bigint not null auto_increment,
+employeeFK bigint not null,
+startDate date not null default (cast(now() as date)),
+endDate date not null default '9999-01-01',
+amount float not null,
+primary key(id),
+foreign key(employeeFK) references employees(id)
+);
+
+create table departments(
+id bigint not null auto_increment,
+name varchar(200),
+primary key(id)
+);
+
+create table department_employee(
+id bigint not null auto_increment,
+departmentFK bigint not null,
+employeeFK bigint not null,
+startDate date not null default (cast(now() as date)),
+endDate date not null default '9999-01-01',
+primary key(id),
+foreign key(employeeFK) references employees(id),
+foreign key(departmentFK) references departments(id)
+);
+
+create table managers(
+id bigint not null auto_increment,
+departmentFK bigint not null,
+employeeFK bigint not null,
+startDate date not null default (cat(now() as date)),
+endDate date not null default '9999-01-01',
+primary key(id)
+);
