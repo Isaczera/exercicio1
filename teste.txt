@@ -5,3 +5,21 @@ aluno on turma.id=
 aluno.turmaFK group by turma.id; 
 
 select turmaFK count(*) from aluno group by turmaFK;
+
+
+ATIVIDADE NETFLIX
+1) Criar uma aplicação exemplo netflix;
+2) Nesta aplicação haverão filmes cadastrados, onde deve-se conter a imagem (url) do banner do filme, data de criação, quantidade de vezes exibida, categoria, sinopse, título, entre outras informações que julgar pertinente;
+3) As categorias de filmes devem ser previamente cadastradas para serem atribuídas aos filmes;
+4) Nesta aplicação haverão usuários com dados básicos que julgar pertinente, além de sua assinatura (plano basic, premium, gold, cada um com seu valor).
+5) Deve-se registrar os pagamentos realizados pelos usuários bem como sua data de efetivação.
+
+
+ATIVIDADE SISTEMA DE FIDELIDADE DE COMPRA					
+1) Criar uma aplicação que gerencia notas fiscais e produtos para receberem bônus de fidelidade de compra;
+2) Essa aplicação possui customers (clientes) e resellers (revendedores), que devem ser previamente cadastrados no sistema;
+3) Uma revenda possui a responsabilidade de gerenciar um ou mais clientes;
+4) As notas fiscais devem ser lidas pela aplicação e conter alguns dados principais, como: Nº chave da nota, data de emissão da nota, valor total da nota, cnpj do cliente e da revenda responsável pela venda dos produtos, além de conter os dados de um ou mais itens da nota fiscal (com detalhamento de quantidade comprada, tipo do produto, código do produto e valor);
+5) Deve existir a possibilidade de cadastro de produtos, contendo seu código do produto, descrição, categoria, status (ativo ou inativo) e data de cadastro do produto.
+6) Atenção: deve ser possível ativar ou desativar um produto com uma respectiva data de validade do mesmo, ou seja, um produto pode conter inúmeras datas de ativação e desativação para serem usados pela a aplicação para saber se deve ser bonificado tal produto vendido ou não no programa de fidelidade.
+7) Um cliente somente pode carregar notas fiscais no sistema de revendas que estejam responsáveis por ele, ou seja, deve-se atrelar clientes e revendas de acordo com responsabilidades das revendas.
