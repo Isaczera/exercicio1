@@ -51,3 +51,14 @@ values('Daniel', 'daniel20@gmail.com', '31234', 'padrão', 39.90);
 
 
 select * from usuarios;
+
+
+select titulo, quantidade_exibicoes 
+from filmes 
+order by quantidade_exibicoes desc 
+limit 1;
+
+select titulo, quantidade_exibicoes 
+from filmes 
+order by quantidade_exibicoes asc 
+limit 1;
