@@ -1,0 +1,34 @@
+create database fidelidade_compra;
+use fidelidade_compra;
+
+create table cliente(
+id bigint not null auto_increment,
+nome varchar(100) not null,
+cpf varchar(50) not null,
+email varchar(100) not null,
+telefone bigint not null,
+primary key(id)
+);
+
+create table revendedores(
+id bigint not null auto_increment,
+nome varchar(100) not null,
+cnpj varchar(50) not null,
+email varchar(100) not null,
+telefone bigint not null,
+primary key(id)
+);
+
+create table produtos(
+id bigint not null auto_increment,
+descricao text not null,
+categoria varchar (100) not null,
+statos enum ('Ativo', 'Inativo') not null,
+data_entrada date not null,
+data_saida date not null,
+primary key(id)
+);
+
+create table (
+
+);
